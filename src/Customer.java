@@ -52,4 +52,46 @@ public class Customer {
 
     public void addAccount(Account accNumber){ accountsArrayList.add(accNumber); }
 
+    public void internalTransfer(int senderAccount, int receiverAccount, float amount){
+        boolean senderAccNumCheck = false;
+        boolean receiverAccNumCheck = false;
+        int senderAccIndex = -1;
+        int receiverAccIndex = -1;
+
+        if(senderAccount == receiverAccount)
+            System.out.println("Sender and receiver accounts can't be the same!");
+        else {
+
+            for (int i = 0; i < accountsArrayList.size(); i++) {
+                if (senderAccount == accountsArrayList.get(i).getAccNumber()) {
+                    senderAccNumCheck = true;
+                    senderAccIndex = i;
+                } else if (receiverAccount == accountsArrayList.get(i).getAccNumber()) {
+                    receiverAccNumCheck = true;
+                    receiverAccIndex = i;
+                }
+            }
+
+            if (amount > accountsArrayList.get(senderAccIndex).getBalance())
+                System.out.println("Non-Sufficient Founds! -- Transfer Declined!");
+            else {
+                if (senderAccNumCheck && receiverAccNumCheck) {
+                    accountsArrayList.get(senderAccIndex).setBalance(accountsArrayList.get(senderAccIndex).getBalance() - amount);
+                    accountsArrayList.get(receiverAccIndex).setBalance(accountsArrayList.get(receiverAccIndex).getBalance() + amount);
+                    System.out.println("Transfer Succeeded!\n" + "Transfer Amount: $" + amount +
+                            "\nSender Account Number : " + senderAccount +
+                            " -- New Balance : $" + accountsArrayList.get(senderAccIndex).getBalance() +
+                            "\nReceiver Account Number : " + receiverAccount +
+                            " -- New Balance : $" + accountsArrayList.get(receiverAccIndex).getBalance());
+                } else {
+                    if (!senderAccNumCheck && !receiverAccNumCheck)
+                        System.out.println("Account Numbers : " + senderAccount + ", " + receiverAccount + " not found!");
+                    else if (!senderAccNumCheck)
+                        System.out.println("Account Number : " + senderAccount + " not found!");
+                    else
+                        System.out.println("Account Number : " + receiverAccount + " not found!");
+                }
+            }
+        }
+    }
 }

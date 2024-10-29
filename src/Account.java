@@ -17,7 +17,7 @@ public class Account {
     // Set
     public void setAccNumber(int accNumber){ this.accNumber = accNumber; }
     public void setBalance(float balance){ this.balance = balance; }
-    public void setBalance(String type){ this.type = type; }
+    public void setType(String type){ this.type = type; }
 
     public void deposit(float amount){
         if(amount <= 0){ System.out.println("Deposit amount must be more than 0!\n");}

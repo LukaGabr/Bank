@@ -13,15 +13,16 @@ public class Main {
         Customer customerTwo = new Customer("Jimi", "Hendrix", "27-Nov-1942", customerTwo_AccountOne);
 
 
-        System.out.println("*****************************************\n");
-        System.out.println(customerOne.toString());
-        System.out.println("*****************************************\n");
-        System.out.println(customerTwo.toString());
-        System.out.println("*****************************************\n");
+        System.out.println("*********************************************\n");
+        System.out.println(customerOne);
+        System.out.println("*********************************************\n");
+        System.out.println(customerTwo);
+        System.out.println("*********************************************\n");
         customerOne_AccountOne.deposit(50.72f);
-        System.out.println("*****************************************\n");
-        customerOne_AccountOne.withdraw(600f);
-        System.out.println("*****************************************\n");
+        System.out.println("*********************************************\n");
+        customerOne_AccountOne.withdraw(100f);
+        System.out.println("*********************************************\n");
+        customerOne.internalTransfer(113532677,113532678,407.18f);
 
     }
 }

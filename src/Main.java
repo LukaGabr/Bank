@@ -17,7 +17,6 @@ public class Main {
         //customerTwo.addAccount(customerTwo_AccountTwo);
 
 
-
         System.out.println("\n" + customerOne.toString());
         System.out.println("****************************************");
         System.out.println("\n" + customerTwo.toString());

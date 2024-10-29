@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Customer { // Bank
+public class Customer { // Bank.
     private String firstName, lastName;
     private String dateOfBirth;
     private ArrayList<Account> accountsArrayList = new ArrayList<Account>();

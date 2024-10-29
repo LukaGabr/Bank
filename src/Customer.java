@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Customer { // Bank.
+public class Customer {
     private String firstName, lastName;
     private String dateOfBirth;
     private ArrayList<Account> accountsArrayList = new ArrayList<Account>();
@@ -16,7 +16,7 @@ public class Customer { // Bank.
     public void setFirstName(String firstName){ firstName = this.firstName; }
     public void setLastName(String lastName){ lastName = this.lastName; }
     public void setDateOfBirth(String dateOfBirth){ dateOfBirth = this.dateOfBirth; }
-    public void setAccNumber(Account accNumber){}
+
 
     // Get
     public String getFirstName(){ return this.firstName; }

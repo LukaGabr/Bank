@@ -19,4 +19,14 @@ public class Account {
     public void setBalance(float balance){ this.balance = balance; }
     public void setBalance(String type){ this.type = type; }
 
+    public void deposit(float amount){
+        if(amount <= 0){ System.out.println("Deposit amount must be more than 0!");}
+        else {
+            balance += amount;
+            System.out.println("Deposit Succeeded! \nDeposit Amount: $" +
+                    amount + "\nAccount number: " + this.getAccNumber() +
+                    "\nNew Balance: $" + this.getBalance());
+        }
+    }
+
 }

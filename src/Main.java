@@ -11,17 +11,16 @@ public class Main {
 
         // Customer Two
         Account customerTwo_AccountOne = new Account(113532679, 245.45f, "Checking");
-        Account customerTwo_AccountTwo = new Account(113532680, 65.99f, "Savings");
 
         Customer customerTwo = new Customer("Jimi", "Hendrix", "27-Nov-1942", customerTwo_AccountOne);
-        //customerTwo.addAccount(customerTwo_AccountTwo);
 
 
-        System.out.println("\n" + customerOne.toString());
-        System.out.println("****************************************");
-        System.out.println("\n" + customerTwo.toString());
-        System.out.println("****************************************");
-        System.out.println("\n" + customerOne.getAccNumber());
+        System.out.println("*****************************************\n");
+        System.out.println(customerOne.toString());
+        System.out.println("*****************************************\n");
+        System.out.println(customerTwo.toString());
+        System.out.println("\n*****************************************\n");
+        customerOne_AccountOne.deposit(50.72f);
 
     }
 }

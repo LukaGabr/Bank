@@ -31,7 +31,7 @@ public class Customer {
                     "\nDate of birth : " + this.dateOfBirth +
                     "\nAccount Number : \n" + "(" + this.accountsArrayList.getFirst().getType() + ") -- " +
                     this.accountsArrayList.getFirst().getAccNumber() +
-                    " -- Balance : $" + this.accountsArrayList.getFirst().getBalance();
+                    " -- Balance : $" + this.accountsArrayList.getFirst().getBalance() + "\n";
         } else { // If there are more than one element in accountsArrayList
             StringBuilder accNumbersStr = new StringBuilder();
             for(int i = 0; i < accountsArrayList.size(); i++){

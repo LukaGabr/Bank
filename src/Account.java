@@ -20,13 +20,22 @@ public class Account {
     public void setBalance(String type){ this.type = type; }
 
     public void deposit(float amount){
-        if(amount <= 0){ System.out.println("Deposit amount must be more than 0!");}
+        if(amount <= 0){ System.out.println("Deposit amount must be more than 0!\n");}
         else {
             balance += amount;
             System.out.println("Deposit Succeeded! \nDeposit Amount: $" +
                     amount + "\nAccount number: " + this.getAccNumber() +
-                    "\nNew Balance: $" + this.getBalance());
+                    "\nNew Balance: $" + this.getBalance() + "\n");
         }
     }
 
+    public void withdraw(float amount){
+        if(amount > balance){ System.out.println("Non-Sufficient Founds!\n"); }
+        else {
+            balance -= amount;
+            System.out.println("Withdrawal Succeeded! \nWithdraw Amount: $" +
+                    amount + "\nAccount number: " + this.getAccNumber() +
+                    "\nNew Balance: $" + this.getBalance() + "\n");
+        }
+    }
 }

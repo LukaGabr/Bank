@@ -1,5 +1,3 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         // Customer One
@@ -19,8 +17,11 @@ public class Main {
         System.out.println(customerOne.toString());
         System.out.println("*****************************************\n");
         System.out.println(customerTwo.toString());
-        System.out.println("\n*****************************************\n");
+        System.out.println("*****************************************\n");
         customerOne_AccountOne.deposit(50.72f);
+        System.out.println("*****************************************\n");
+        customerOne_AccountOne.withdraw(600f);
+        System.out.println("*****************************************\n");
 
     }
 }

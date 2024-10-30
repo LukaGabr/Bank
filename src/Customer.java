@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Customer {
     private String firstName, lastName;
     private String dateOfBirth;
-    private ArrayList<Account> accountsArrayList = new ArrayList<Account>();
+    private ArrayList<Account> accountsArrayList = new ArrayList<>();
 
     public Customer(String firstName, String lastName, String dateOfBirth, Account accNumber){
         this.firstName = firstName;
@@ -17,7 +17,6 @@ public class Customer {
     public void setLastName(String lastName){ lastName = this.lastName; }
     public void setDateOfBirth(String dateOfBirth){ dateOfBirth = this.dateOfBirth; }
 
-
     // Get
     public String getFirstName(){ return this.firstName; }
     public String getLastName(){ return this.lastName; }
@@ -29,9 +28,12 @@ public class Customer {
             return "First Name : " + this.firstName +
                     "\nLast Name : " + this.lastName +
                     "\nDate of birth : " + this.dateOfBirth +
-                    "\nAccount Number : \n" + "(" + this.accountsArrayList.getFirst().getType() + ") -- " +
+                    "\n\n --- Account associated with the customer --- \n\n" + "(" + this.accountsArrayList.getFirst().getType() + ") -- " +
                     this.accountsArrayList.getFirst().getAccNumber() +
-                    " -- Balance : $" + this.accountsArrayList.getFirst().getBalance() + "\n";
+                    " -- Balance : $" + this.accountsArrayList.getFirst().getBalance() +
+                    "\nCard Number : " + this.accountsArrayList.getFirst().getPhysicalCard().getCardNumber() +
+                    "\nExpiration Date : " + this.accountsArrayList.getFirst().getPhysicalCard().getExpirationDate() +
+                    "\nCard Type : " + this.accountsArrayList.getFirst().getPhysicalCard().getCardType() + "\n";
         } else { // If there are more than one element in accountsArrayList
             StringBuilder accNumbersStr = new StringBuilder();
             for(int i = 0; i < accountsArrayList.size(); i++){
@@ -41,12 +43,18 @@ public class Customer {
                         .append(this.accountsArrayList.get(i).getAccNumber())
                         .append(" -- Balance : $")
                         .append(this.accountsArrayList.get(i).getBalance())
-                        .append("\n");
+                        .append("\nCard Number : ")
+                        .append(this.accountsArrayList.get(i).getPhysicalCard().getCardNumber())
+                        .append("\nExpiration Date : ")
+                        .append(this.accountsArrayList.get(i).getPhysicalCard().getExpirationDate())
+                        .append("\nCard Type : ")
+                        .append(this.accountsArrayList.get(i).getPhysicalCard().getCardType())
+                        .append("\n\n");
             }
             return "First Name : " + this.firstName +
                     "\nLast Name : " + this.lastName +
                     "\nDate of birth : " + this.dateOfBirth +
-                    "\nAccount Numbers : \n" + accNumbersStr;
+                    "\n\n --- Accounts associated with the customer --- \n\n" + accNumbersStr;
         }
     }
 
@@ -73,7 +81,7 @@ public class Customer {
             }
 
             if (amount > accountsArrayList.get(senderAccIndex).getBalance())
-                System.out.println("Non-Sufficient Founds! -- Transfer Declined!");
+                System.out.println("Non-Sufficient Founds! -- Transfer Declined! \n");
             else {
                 if (senderAccNumCheck && receiverAccNumCheck) {
                     accountsArrayList.get(senderAccIndex).setBalance(accountsArrayList.get(senderAccIndex).getBalance() - amount);
@@ -82,14 +90,14 @@ public class Customer {
                             "\nSender Account Number : " + senderAccount +
                             " -- New Balance : $" + accountsArrayList.get(senderAccIndex).getBalance() +
                             "\nReceiver Account Number : " + receiverAccount +
-                            " -- New Balance : $" + accountsArrayList.get(receiverAccIndex).getBalance());
+                            " -- New Balance : $" + accountsArrayList.get(receiverAccIndex).getBalance() + "\n");
                 } else {
                     if (!senderAccNumCheck && !receiverAccNumCheck)
                         System.out.println("Account Numbers : " + senderAccount + ", " + receiverAccount + " not found!");
                     else if (!senderAccNumCheck)
-                        System.out.println("Account Number : " + senderAccount + " not found!");
+                        System.out.println("Account Number : " + senderAccount + " not found! \n");
                     else
-                        System.out.println("Account Number : " + receiverAccount + " not found!");
+                        System.out.println("Account Number : " + receiverAccount + " not found! \n");
                 }
             }
         }

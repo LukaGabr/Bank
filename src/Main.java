@@ -22,7 +22,8 @@ public class Main {
         Account customerTwo_AccountOne = new Account
                 (113532679, 245.45f, "Checking", customerTwo_PhysicalCardOne);
 
-        Customer customerTwo = new Customer("Jimi", "Hendrix", "27-Nov-1942", customerTwo_AccountOne);
+        Customer customerTwo = new Customer
+                ("Jimi", "Hendrix", "27-Nov-1942", customerTwo_AccountOne);
 
 
         System.out.println("**********************************************\n");

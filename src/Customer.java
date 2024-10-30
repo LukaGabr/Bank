@@ -28,7 +28,8 @@ public class Customer {
             return "First Name : " + this.firstName +
                     "\nLast Name : " + this.lastName +
                     "\nDate of birth : " + this.dateOfBirth +
-                    "\n\n --- Account associated with the customer --- \n\n" + "(" + this.accountsArrayList.getFirst().getType() + ") -- " +
+                    "\n\n --- Account associated with the customer --- \n\n" + "(" +
+                    this.accountsArrayList.getFirst().getType() + ") -- " +
                     this.accountsArrayList.getFirst().getAccNumber() +
                     " -- Balance : $" + this.accountsArrayList.getFirst().getBalance() +
                     "\nCard Number : " + this.accountsArrayList.getFirst().getPhysicalCard().getCardNumber() +
@@ -84,8 +85,10 @@ public class Customer {
                 System.out.println("Non-Sufficient Founds! -- Transfer Declined! \n");
             else {
                 if (senderAccNumCheck && receiverAccNumCheck) {
-                    accountsArrayList.get(senderAccIndex).setBalance(accountsArrayList.get(senderAccIndex).getBalance() - amount);
-                    accountsArrayList.get(receiverAccIndex).setBalance(accountsArrayList.get(receiverAccIndex).getBalance() + amount);
+                    accountsArrayList.get(senderAccIndex).setBalance
+                            (accountsArrayList.get(senderAccIndex).getBalance() - amount);
+                    accountsArrayList.get(receiverAccIndex).setBalance
+                            (accountsArrayList.get(receiverAccIndex).getBalance() + amount);
                     System.out.println("Transfer Succeeded!\n" + "Transfer Amount: $" + amount +
                             "\nSender Account Number : " + senderAccount +
                             " -- New Balance : $" + accountsArrayList.get(senderAccIndex).getBalance() +
@@ -93,11 +96,14 @@ public class Customer {
                             " -- New Balance : $" + accountsArrayList.get(receiverAccIndex).getBalance() + "\n");
                 } else {
                     if (!senderAccNumCheck && !receiverAccNumCheck)
-                        System.out.println("Account Numbers : " + senderAccount + ", " + receiverAccount + " not found!");
+                        System.out.println("Account Numbers : " + senderAccount + ", " +
+                                receiverAccount + " not found!");
                     else if (!senderAccNumCheck)
-                        System.out.println("Account Number : " + senderAccount + " not found! \n");
+                        System.out.println("Account Number : " +
+                                senderAccount + " not found! \n");
                     else
-                        System.out.println("Account Number : " + receiverAccount + " not found! \n");
+                        System.out.println("Account Number : " +
+                                receiverAccount + " not found! \n");
                 }
             }
         }

@@ -2,9 +2,9 @@ public class Main {
     public static void main(String[] args) {
         // Customer One
         PhysicalCard customerOne_PhysicalCardOne = new PhysicalCard
-                ("2342 8655 4441 1233", "10-Nov-2025", "Debit", 334);
+                ("2342 8655 4441 1233", "10-Nov-2025", 334);
         PhysicalCard customerOne_PhysicalCardTwo = new PhysicalCard
-                ("8965 0904 4324 3433", "03-May-2026", "Credit", 531);
+                ("8965 0904 4324 3433", "03-May-2026", 531);
 
         Account customerOne_AccountOne = new Account
                 (113532677, 456.45f, "Checking", customerOne_PhysicalCardOne);
@@ -17,7 +17,7 @@ public class Main {
 
         // Customer Two
         PhysicalCard customerTwo_PhysicalCardOne =new PhysicalCard
-                ("2341 4432 1122 0931", "30-Dec-2027", "Credit", 119);
+                ("2341 4432 1122 0931", "30-Dec-2027", 119);
 
         Account customerTwo_AccountOne = new Account
                 (113532680, 245.45f, "Checking", customerTwo_PhysicalCardOne);
@@ -27,7 +27,7 @@ public class Main {
 
         // Creating a Physical card and an Account for accountOne
         PhysicalCard customerOne_PhysicalCardThree = new PhysicalCard
-                ("4443 2321 1123 0909", "11-Aug-2025", "Debit", 321);
+                ("4443 2321 1123 0909", "11-Aug-2025", 321);
 
         Account customerOne_AccountThree = new Account
                 (113532679, 20f, "Checking", customerOne_PhysicalCardThree);

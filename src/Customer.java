@@ -33,8 +33,7 @@ public class Customer {
                     this.accountsArrayList.getFirst().getAccNumber() +
                     " -- Balance : $" + this.accountsArrayList.getFirst().getBalance() +
                     "\nCard Number : " + this.accountsArrayList.getFirst().getPhysicalCard().getCardNumber() +
-                    "\nExpiration Date : " + this.accountsArrayList.getFirst().getPhysicalCard().getExpirationDate() +
-                    "\nCard Type : " + this.accountsArrayList.getFirst().getPhysicalCard().getCardType() + "\n";
+                    "\nExpiration Date : " + this.accountsArrayList.getFirst().getPhysicalCard().getExpirationDate() + "\n";
         } else { // If there are more than one element in accountsArrayList
             StringBuilder accNumbersStr = new StringBuilder();
             for(int i = 0; i < accountsArrayList.size(); i++){
@@ -48,8 +47,6 @@ public class Customer {
                         .append(this.accountsArrayList.get(i).getPhysicalCard().getCardNumber())
                         .append("\nExpiration Date : ")
                         .append(this.accountsArrayList.get(i).getPhysicalCard().getExpirationDate())
-                        .append("\nCard Type : ")
-                        .append(this.accountsArrayList.get(i).getPhysicalCard().getCardType())
                         .append("\n\n");
             }
             return "First Name : " + this.firstName +
